@@ -1,0 +1,22 @@
+curl 'https://wabi-us-gov-iowa-api.analysis.usgovcloudapi.net/public/reports/querydata?synchronous=true' \
+  -H 'Connection: keep-alive' \
+  -H 'Pragma: no-cache' \
+  -H 'Cache-Control: no-cache' \
+  -H 'sec-ch-ua: "Google Chrome";v="87", " Not;A Brand";v="99", "Chromium";v="87"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36' \
+  -H 'ActivityId: 8955a734-834e-1096-c5f8-676f36eb24df' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'RequestId: 7193c739-7cd8-5142-1c51-5bf8282c5852' \
+  -H 'X-PowerBI-ResourceKey: da0f9423-f4be-4676-b242-4ecf4f49d002' \
+  -H 'Content-Type: application/json;charset=UTF-8' \
+  -H 'Origin: https://app.powerbigov.us' \
+  -H 'Sec-Fetch-Site: cross-site' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: https://app.powerbigov.us/' \
+  -H 'Accept-Language: en-US,en;q=0.9' \
+  -H 'dnt: 1' \
+  -H 'sec-gpc: 1' \
+  --data-binary $'{"version":"1.0.0","queries":[{"Query":{"Commands":[{"SemanticQueryDataShapeCommand":{"Query":{"Version":2,"From":[{"Name":"f","Entity":"Counts of People by County","Type":0}],"Select":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"County"},"Name":"Counts of People by County.County"},{"Aggregation":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"PartiallyCovered"}},"Function":0},"Name":"Sum(Counts of People by County.PartiallyCovered)"},{"Aggregation":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"FullyCovered"}},"Function":0},"Name":"Sum(Counts of People by County.FullyCovered)"}],"Where":[{"Condition":{"Not":{"Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"County"}}],"Values":[[{"Literal":{"Value":"null"}}],[{"Literal":{"Value":"\'\'"}}],[{"Literal":{"Value":"\'Out-of-State\'"}}]]}}}}}],"OrderBy":[{"Direction":2,"Expression":{"Aggregation":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"PartiallyCovered"}},"Function":0}}}]},"Binding":{"Primary":{"Groupings":[{"Projections":[0,1,2]}]},"DataReduction":{"DataVolume":4,"Primary":{"Top":{}}},"Aggregates":[{"Select":1,"Aggregations":[{"Min":{}},{"Max":{}}]}],"SuppressedJoinPredicates":[2],"Version":1}}}]},"CacheKey":"{\\"Commands\\":[{\\"SemanticQueryDataShapeCommand\\":{\\"Query\\":{\\"Version\\":2,\\"From\\":[{\\"Name\\":\\"f\\",\\"Entity\\":\\"Counts of People by County\\",\\"Type\\":0}],\\"Select\\":[{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"County\\"},\\"Name\\":\\"Counts of People by County.County\\"},{\\"Aggregation\\":{\\"Expression\\":{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"PartiallyCovered\\"}},\\"Function\\":0},\\"Name\\":\\"Sum(Counts of People by County.PartiallyCovered)\\"},{\\"Aggregation\\":{\\"Expression\\":{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"FullyCovered\\"}},\\"Function\\":0},\\"Name\\":\\"Sum(Counts of People by County.FullyCovered)\\"}],\\"Where\\":[{\\"Condition\\":{\\"Not\\":{\\"Expression\\":{\\"In\\":{\\"Expressions\\":[{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"County\\"}}],\\"Values\\":[[{\\"Literal\\":{\\"Value\\":\\"null\\"}}],[{\\"Literal\\":{\\"Value\\":\\"\'\'\\"}}],[{\\"Literal\\":{\\"Value\\":\\"\'Out-of-State\'\\"}}]]}}}}}],\\"OrderBy\\":[{\\"Direction\\":2,\\"Expression\\":{\\"Aggregation\\":{\\"Expression\\":{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"PartiallyCovered\\"}},\\"Function\\":0}}}]},\\"Binding\\":{\\"Primary\\":{\\"Groupings\\":[{\\"Projections\\":[0,1,2]}]},\\"DataReduction\\":{\\"DataVolume\\":4,\\"Primary\\":{\\"Top\\":{}}},\\"Aggregates\\":[{\\"Select\\":1,\\"Aggregations\\":[{\\"Min\\":{}},{\\"Max\\":{}}]}],\\"SuppressedJoinPredicates\\":[2],\\"Version\\":1}}}]}","QueryId":"","ApplicationContext":{"DatasetId":"1e549164-aeab-4dcf-a97f-f70de27e715d","Sources":[{"ReportId":"53c72848-c634-4597-a571-54c087a01780"}]}}],"cancelQueries":[],"modelId":314528}' \
+  --compressed | jq .
