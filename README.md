@@ -1,0 +1,2 @@
+# scrape-pa-powerbi
+Scrape PA DOH powerbi vaccine dashboard https://app.powerbigov.us/view?r=eyJrIjoiZGEwZjk0MjMtZjRiZS00Njc2LWIyNDItNGVjZjRmNDlkMDAyIiwidCI6IjQxOGUyODQxLTAxMjgtNGRkNS05YjZjLTQ3ZmM1YTlhMWJkZSJ9
