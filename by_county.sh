@@ -1,0 +1,22 @@
+curl 'https://wabi-us-gov-iowa-api.analysis.usgovcloudapi.net/public/reports/querydata?synchronous=true' \
+  -H 'Connection: keep-alive' \
+  -H 'Pragma: no-cache' \
+  -H 'Cache-Control: no-cache' \
+  -H 'sec-ch-ua: "Google Chrome";v="87", " Not;A Brand";v="99", "Chromium";v="87"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36' \
+  -H 'ActivityId: 8955a734-834e-1096-c5f8-676f36eb24df' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'RequestId: edba89a2-f902-df92-175b-9bac450eeb41' \
+  -H 'X-PowerBI-ResourceKey: da0f9423-f4be-4676-b242-4ecf4f49d002' \
+  -H 'Content-Type: application/json;charset=UTF-8' \
+  -H 'Origin: https://app.powerbigov.us' \
+  -H 'Sec-Fetch-Site: cross-site' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: https://app.powerbigov.us/' \
+  -H 'Accept-Language: en-US,en;q=0.9' \
+  -H 'dnt: 1' \
+  -H 'sec-gpc: 1' \
+  --data-binary $'{"version":"1.0.0","queries":[{"Query":{"Commands":[{"SemanticQueryDataShapeCommand":{"Query":{"Version":2,"From":[{"Name":"f","Entity":"Counts of People by County","Type":0},{"Name":"c","Entity":"Counts of Vaccinations by County of Residence","Type":0},{"Name":"n","Entity":"Navigation","Type":0}],"Select":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"County"},"Name":"FromBHSR.County"},{"Aggregation":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"PartiallyCovered"}},"Function":0},"Name":"Sum(FromBHSR.PartiallyCovered)"},{"Aggregation":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"FullyCovered"}},"Function":0},"Name":"Sum(FromBHSR.FullyCovered)"}],"Where":[{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"Is Latest Row Filter"}}],"Values":[[{"Literal":{"Value":"1L"}}]]}}},{"Condition":{"Not":{"Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"County"}}],"Values":[[{"Literal":{"Value":"\'\'"}}]]}}}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"n"}},"Property":"Page name"}}],"Values":[[{"Literal":{"Value":"\'Demographics\'"}}]]}}}]},"Binding":{"Primary":{"Groupings":[{"Projections":[0,1,2],"Subtotal":1}]},"DataReduction":{"DataVolume":3,"Primary":{"Window":{"Count":500}}},"Version":1}}}]},"CacheKey":"{\\"Commands\\":[{\\"SemanticQueryDataShapeCommand\\":{\\"Query\\":{\\"Version\\":2,\\"From\\":[{\\"Name\\":\\"f\\",\\"Entity\\":\\"Counts of People by County\\",\\"Type\\":0},{\\"Name\\":\\"c\\",\\"Entity\\":\\"Counts of Vaccinations by County of Residence\\",\\"Type\\":0},{\\"Name\\":\\"n\\",\\"Entity\\":\\"Navigation\\",\\"Type\\":0}],\\"Select\\":[{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"County\\"},\\"Name\\":\\"FromBHSR.County\\"},{\\"Aggregation\\":{\\"Expression\\":{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"PartiallyCovered\\"}},\\"Function\\":0},\\"Name\\":\\"Sum(FromBHSR.PartiallyCovered)\\"},{\\"Aggregation\\":{\\"Expression\\":{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"FullyCovered\\"}},\\"Function\\":0},\\"Name\\":\\"Sum(FromBHSR.FullyCovered)\\"}],\\"Where\\":[{\\"Condition\\":{\\"In\\":{\\"Expressions\\":[{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"c\\"}},\\"Property\\":\\"Is Latest Row Filter\\"}}],\\"Values\\":[[{\\"Literal\\":{\\"Value\\":\\"1L\\"}}]]}}},{\\"Condition\\":{\\"Not\\":{\\"Expression\\":{\\"In\\":{\\"Expressions\\":[{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"County\\"}}],\\"Values\\":[[{\\"Literal\\":{\\"Value\\":\\"\'\'\\"}}]]}}}}},{\\"Condition\\":{\\"In\\":{\\"Expressions\\":[{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"n\\"}},\\"Property\\":\\"Page name\\"}}],\\"Values\\":[[{\\"Literal\\":{\\"Value\\":\\"\'Demographics\'\\"}}]]}}}]},\\"Binding\\":{\\"Primary\\":{\\"Groupings\\":[{\\"Projections\\":[0,1,2],\\"Subtotal\\":1}]},\\"DataReduction\\":{\\"DataVolume\\":3,\\"Primary\\":{\\"Window\\":{\\"Count\\":500}}},\\"Version\\":1}}}]}","QueryId":"","ApplicationContext":{"DatasetId":"1e549164-aeab-4dcf-a97f-f70de27e715d","Sources":[{"ReportId":"53c72848-c634-4597-a571-54c087a01780"}]}}],"cancelQueries":[],"modelId":314528}' \
+  --compressed | jq .
