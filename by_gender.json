@@ -1,0 +1,128 @@
+{
+  "jobIds": [
+    "001d3505-56bb-4b2f-ab2a-4bd47e77b18c"
+  ],
+  "results": [
+    {
+      "jobId": "001d3505-56bb-4b2f-ab2a-4bd47e77b18c",
+      "result": {
+        "data": {
+          "timestamp": "2021-01-28T00:08:37.639Z",
+          "rootActivityId": "c674094e-2213-49a7-9473-2d29459fea00",
+          "descriptor": {
+            "Select": [
+              {
+                "Kind": 1,
+                "Depth": 0,
+                "Value": "G0",
+                "GroupKeys": [
+                  {
+                    "Source": {
+                      "Entity": "Vaccine by Gender",
+                      "Property": "Gender"
+                    },
+                    "Calc": "G0",
+                    "IsSameAsSelect": true
+                  }
+                ],
+                "Name": "Vaccine by Gender.Gender"
+              },
+              {
+                "Kind": 2,
+                "Value": "M0",
+                "Format": "#,0",
+                "Name": "Sum(Vaccine by Gender.Partially Covered)"
+              },
+              {
+                "Kind": 2,
+                "Value": "M1",
+                "Format": "#,0",
+                "Name": "Sum(Vaccine by Gender.Fully Covered)"
+              }
+            ],
+            "Expressions": {
+              "Primary": {
+                "Groupings": [
+                  {
+                    "Keys": [
+                      {
+                        "Source": {
+                          "Entity": "Vaccine by Gender",
+                          "Property": "Gender"
+                        },
+                        "Select": 0
+                      }
+                    ],
+                    "Member": "DM0"
+                  }
+                ]
+              }
+            },
+            "Version": 2
+          },
+          "fromCache": false,
+          "dsr": {
+            "Version": 2,
+            "MinorVersion": 1,
+            "DS": [
+              {
+                "N": "DS0",
+                "PH": [
+                  {
+                    "DM0": [
+                      {
+                        "S": [
+                          {
+                            "N": "G0",
+                            "T": 1,
+                            "DN": "D0"
+                          },
+                          {
+                            "N": "M0",
+                            "T": 4
+                          },
+                          {
+                            "N": "M1",
+                            "T": 4
+                          }
+                        ],
+                        "C": [
+                          0,
+                          116453,
+                          29115
+                        ]
+                      },
+                      {
+                        "C": [
+                          1,
+                          252224,
+                          65612
+                        ]
+                      },
+                      {
+                        "C": [
+                          2,
+                          19252,
+                          4154
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "IC": true,
+                "HAD": true,
+                "ValueDicts": {
+                  "D0": [
+                    "Male",
+                    "Female",
+                    "Unknown"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

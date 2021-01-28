@@ -1,0 +1,134 @@
+{
+  "jobIds": [
+    "985c9933-891c-47ee-9caa-6834da49a2a3"
+  ],
+  "results": [
+    {
+      "jobId": "985c9933-891c-47ee-9caa-6834da49a2a3",
+      "result": {
+        "data": {
+          "timestamp": "2021-01-28T00:08:37.774Z",
+          "rootActivityId": "06d6a5d8-0e34-4612-a7f0-ad9e8a376bde",
+          "descriptor": {
+            "Select": [
+              {
+                "Kind": 1,
+                "Depth": 0,
+                "Value": "G0",
+                "GroupKeys": [
+                  {
+                    "Source": {
+                      "Entity": "Vaccine by Race",
+                      "Property": "Race"
+                    },
+                    "Calc": "G0",
+                    "IsSameAsSelect": true
+                  }
+                ],
+                "Name": "Vaccine by Race.Race"
+              },
+              {
+                "Kind": 2,
+                "Value": "M0",
+                "Format": "#,0",
+                "Name": "Sum(Vaccine by Race. Partially Covered )"
+              },
+              {
+                "Kind": 2,
+                "Value": "M1",
+                "Format": "#,0",
+                "Name": "Sum(Vaccine by Race.Fully Covered)"
+              }
+            ],
+            "Expressions": {
+              "Primary": {
+                "Groupings": [
+                  {
+                    "Keys": [
+                      {
+                        "Source": {
+                          "Entity": "Vaccine by Race",
+                          "Property": "Race"
+                        },
+                        "Select": 0
+                      }
+                    ],
+                    "Member": "DM0"
+                  }
+                ]
+              }
+            },
+            "Version": 2
+          },
+          "fromCache": false,
+          "dsr": {
+            "Version": 2,
+            "MinorVersion": 1,
+            "DS": [
+              {
+                "N": "DS0",
+                "PH": [
+                  {
+                    "DM0": [
+                      {
+                        "S": [
+                          {
+                            "N": "G0",
+                            "T": 1
+                          },
+                          {
+                            "N": "M0",
+                            "T": 4
+                          },
+                          {
+                            "N": "M1",
+                            "T": 4
+                          }
+                        ],
+                        "C": [
+                          "White",
+                          205274,
+                          58737
+                        ]
+                      },
+                      {
+                        "C": [
+                          "Unknown",
+                          163653,
+                          33952
+                        ]
+                      },
+                      {
+                        "C": [
+                          "Multiple/Other",
+                          10820,
+                          4091
+                        ]
+                      },
+                      {
+                        "C": [
+                          "African American",
+                          7258,
+                          1816
+                        ]
+                      },
+                      {
+                        "C": [
+                          "Asian",
+                          924,
+                          285
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "IC": true,
+                "HAD": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

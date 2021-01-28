@@ -1,0 +1,128 @@
+{
+  "jobIds": [
+    "017d1c4f-2a1a-4780-be94-4ed51e1483f6"
+  ],
+  "results": [
+    {
+      "jobId": "017d1c4f-2a1a-4780-be94-4ed51e1483f6",
+      "result": {
+        "data": {
+          "timestamp": "2021-01-28T00:08:37.794Z",
+          "rootActivityId": "13c0ecc3-4d0d-4a0f-b769-2113b364e009",
+          "descriptor": {
+            "Select": [
+              {
+                "Kind": 2,
+                "Value": "M0",
+                "Format": "#,0",
+                "Name": "Sum(Vaccine by Ethnicity.Partially Covered)"
+              },
+              {
+                "Kind": 2,
+                "Value": "M1",
+                "Format": "#,0",
+                "Name": "Sum(Vaccine by Ethnicity.Fully Covered)"
+              },
+              {
+                "Kind": 1,
+                "Depth": 0,
+                "Value": "G0",
+                "GroupKeys": [
+                  {
+                    "Source": {
+                      "Entity": "Vaccine by Ethnicity",
+                      "Property": "Ethnicity"
+                    },
+                    "Calc": "G0",
+                    "IsSameAsSelect": true
+                  }
+                ],
+                "Name": "Vaccine by Ethnicity.Ethnicity"
+              }
+            ],
+            "Expressions": {
+              "Primary": {
+                "Groupings": [
+                  {
+                    "Keys": [
+                      {
+                        "Source": {
+                          "Entity": "Vaccine by Ethnicity",
+                          "Property": "Ethnicity"
+                        },
+                        "Select": 2
+                      }
+                    ],
+                    "Member": "DM0"
+                  }
+                ]
+              }
+            },
+            "Version": 2
+          },
+          "fromCache": false,
+          "dsr": {
+            "Version": 2,
+            "MinorVersion": 1,
+            "DS": [
+              {
+                "N": "DS0",
+                "PH": [
+                  {
+                    "DM0": [
+                      {
+                        "S": [
+                          {
+                            "N": "G0",
+                            "T": 1,
+                            "DN": "D0"
+                          },
+                          {
+                            "N": "M0",
+                            "T": 4
+                          },
+                          {
+                            "N": "M1",
+                            "T": 4
+                          }
+                        ],
+                        "C": [
+                          0,
+                          5674,
+                          1684
+                        ]
+                      },
+                      {
+                        "C": [
+                          1,
+                          206416,
+                          61246
+                        ]
+                      },
+                      {
+                        "C": [
+                          2,
+                          175839,
+                          35951
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "IC": true,
+                "HAD": true,
+                "ValueDicts": {
+                  "D0": [
+                    "Hispanic",
+                    "Not Hispanic",
+                    "Unknown"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
