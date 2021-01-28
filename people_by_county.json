@@ -1,14 +1,8 @@
 {
-  "jobIds": [
-    "f68bffc9-600a-4545-9797-a8edca4b5253"
-  ],
   "results": [
     {
-      "jobId": "f68bffc9-600a-4545-9797-a8edca4b5253",
       "result": {
         "data": {
-          "timestamp": "2021-01-28T02:35:22.27Z",
-          "rootActivityId": "3e1b8e4d-3d91-4901-96fc-e497e9bfa367",
           "descriptor": {
             "Select": [
               {
