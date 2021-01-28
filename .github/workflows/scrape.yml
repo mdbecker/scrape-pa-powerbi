@@ -1,0 +1,43 @@
+name: Scrape latest data
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron:  '11,26,41,56 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Fetch age data
+      run: |-
+        bash by_age.sh > by_age.json
+    - name: Fetch county data
+      run: |-
+        bash by_county.sh > by_county.json
+    - name: Fetch ethnicity data
+      run: |-
+        bash by_ethnicity.sh > by_ethnicity.json
+    - name: Fetch gender data
+      run: |-
+        bash by_gender.sh > by_gender.json
+    - name: Fetch race data
+      run: |-
+        bash by_race.sh > by_race.json
+    - name: Fetch over time data
+      run: |-
+        bash over_time.sh > over_time.json
+    - name: Fetch county data 2
+      run: |-
+        bash people_by_county.sh > people_by_county.json
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push
